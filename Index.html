@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#170d0b">
+    <title>Плов Кебаб — Восточная кухня</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="ornament-line"></div>
+    <div class="nav container">
+        <a class="logo" href="#">
+            <span class="logo-mark">❖</span>
+            <span>ПЛОВ <b>КЕБАБ</b></span>
+        </a>
+        <nav>
+            <a href="#menu">Меню</a>
+            <a href="#about">О нас</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="corner corner-tl">❖</div>
+        <div class="corner corner-tr">❖</div>
+
+        <div class="hero-content">
+            <div class="eyebrow">
+                <span>✦</span> HALAL · ВОСТОЧНАЯ КУХНЯ <span>✦</span>
+            </div>
+
+            <h1>Вкус Востока</h1>
+            <div class="hero-name">ПЛОВ КЕБАБ</div>
+
+            <div class="ornament-divider">❖ ━━━━━ ✦ ━━━━━ ❖</div>
+
+            <p>
+                Традиционные блюда, ароматный плов,
+                сочный кебаб и любимые напитки.
+            </p>
+
+            <a class="button" href="#menu">ПОСМОТРЕТЬ МЕНЮ <span>→</span></a>
+        </div>
+
+        <div class="hero-bottom-pattern"></div>
+    </section>
+
+    <section class="menu-section container" id="menu">
+        <div class="section-heading">
+            <div class="eyebrow">НАШИ БЛЮДА</div>
+            <h2>Меню <span>ресторана</span></h2>
+            <p>Выберите любимое блюдо</p>
+            <div class="ornament-divider">❖ ━━━━━ ✦ ━━━━━ ❖</div>
+        </div>
+
+        <div class="search-row">
+            <input id="searchInput" type="search"
+                   placeholder="⌕  Найти блюдо или напиток...">
+            <span id="resultCount" class="result-count"></span>
+        </div>
+
+        <div id="categoryButtons" class="categories"></div>
+        <div id="menuGrid" class="menu-grid"></div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container about-inner">
+            <div class="about-symbol">❖</div>
+            <div>
+                <div class="eyebrow">ПЛОВ КЕБАБ</div>
+                <h2>Традиции в каждом блюде</h2>
+                <p>
+                    Восточный вкус, качественные продукты
+                    и гостеприимство — всё в одном месте.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts container" id="contacts">
+        <div class="section-heading">
+            <div class="eyebrow">МЫ ЖДЁМ ВАС</div>
+            <h2>Контакты</h2>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <span>☎</span>
+                <h3>Телефон</h3>
+                <p>Укажите свой номер</p>
+            </div>
+            <div class="contact-card">
+                <span>◷</span>
+                <h3>Время работы</h3>
+                <p>Ежедневно, 10:00–22:00</p>
+            </div>
+            <div class="contact-card">
+                <span>⌖</span>
+                <h3>Адрес</h3>
+                <p>Укажите адрес ресторана</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="admin-section" id="admin">
+        <div class="container">
+            <div class="section-heading">
+                <div class="eyebrow">УПРАВЛЕНИЕ</div>
+                <h2>Редактор меню</h2>
+                <p>Добавляйте и удаляйте позиции без изменения кода</p>
+            </div>
+
+            <form id="addForm" class="admin-form">
+                <label>
+                    Название блюда
+                    <input id="dishName" required maxlength="80"
+                           placeholder="Например, Плов с говядиной">
+                </label>
+
+                <label>
+                    Описание
+                    <input id="dishDescription" maxlength="180"
+                           placeholder="Краткое описание">
+                </label>
+
+                <label>
+                    Цена (сом)
+                    <input id="dishPrice" type="number" min="0"
+                           max="1000000" step="1" required placeholder="250">
+                </label>
+
+                <label>
+                    Категория
+                    <select id="dishCategory"></select>
+                </label>
+
+                <button class="button admin-button" type="submit">
+                    + Добавить блюдо
+                </button>
+            </form>
+
+            <div class="admin-list-heading">
+                <h3>Все позиции</h3>
+                <span>Удаляйте ненужные блюда</span>
+            </div>
+            <div id="adminList" class="admin-list"></div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-pattern">❖ ✦ ❖ ✦ ❖ ✦ ❖</div>
+    <div class="footer-logo">ПЛОВ КЕБАБ</div>
+    <p>Вкус Востока — в каждом блюде</p>
+    <small>© <span id="year"></span> Плов Кебаб</small>
+</footer>
+
+</body>
+</html>

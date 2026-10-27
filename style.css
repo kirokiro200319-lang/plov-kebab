@@ -1,0 +1,753 @@
+
+:root {
+    --bg: #170d0b;
+    --panel: #241511;
+    --panel-light: #302017;
+    --red: #a92320;
+    --red-light: #cf3930;
+    --gold: #d6ad60;
+    --cream: #fff0d4;
+    --muted: #c6b49d;
+    --line: #76542e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+.container {
+    width: min(1160px, 92%);
+    margin: 0 auto;
+}
+
+/* Кыргызский орнамент из геометрических линий */
+.ornament-line,
+.hero-bottom-pattern,
+footer {
+    background-color: #21110e;
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 10px,
+            rgba(214, 173, 96, .75) 10px 12px,
+            transparent 12px 20px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0 10px,
+            rgba(169, 35, 32, .8) 10px 12px,
+            transparent 12px 20px
+        );
+    background-size: 28px 28px;
+}
+
+.ornament-line {
+    height: 9px;
+    border-bottom: 1px solid var(--gold);
+}
+
+.header {
+    background: #170d0b;
+    border-bottom: 1px solid var(--line);
+}
+
+.nav {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo b {
+    color: var(--cream);
+}
+
+.logo-mark {
+    color: var(--red-light);
+    font-size: 34px;
+}
+
+nav {
+    display: flex;
+    gap: 26px;
+}
+
+nav a {
+    color: var(--cream);
+    transition: color .2s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* Главный экран */
+.hero {
+    min-height: 510px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 75px 20px;
+    border-bottom: 1px solid var(--gold);
+
+    background:
+        radial-gradient(ellipse at center,
+            #45271a 0%,
+            #24140f 48%,
+            #120907 100%);
+}
+
+/* Узоры только по краям — без домов и гор */
+.hero::before,
+.hero::after {
+    content: "❖  ✦  ❖  ✦  ❖";
+    position: absolute;
+    top: 50%;
+    color: var(--gold);
+    font-size: 25px;
+    writing-mode: vertical-rl;
+    letter-spacing: 14px;
+    opacity: .8;
+}
+
+.hero::before {
+    left: 24px;
+    transform: translateY(-50%);
+}
+
+.hero::after {
+    right: 24px;
+    transform: translateY(-50%);
+}
+
+.corner {
+    position: absolute;
+    color: var(--red-light);
+    font-size: 58px;
+    line-height: 1;
+}
+
+.corner-tl {
+    top: 15px;
+    left: 20px;
+}
+
+.corner-tr {
+    top: 15px;
+    right: 20px;
+}
+
+.hero-content {
+    width: min(750px, 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin-top: 20px;
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.1;
+}
+
+.hero-name {
+    color: var(--red-light);
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 6vw, 65px);
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: 3px;
+}
+
+.ornament-divider {
+    margin: 18px 0;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.hero p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 22px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    background: var(--red);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.button:hover {
+    background: var(--red-light);
+    transform: translateY(-2px);
+}
+
+.button span {
+    margin-left: 12px;
+    color: var(--gold);
+}
+
+/* Заголовки разделов */
+.menu-section {
+    padding-top: 70px;
+    padding-bottom: 80px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 5vw, 44px);
+    color: var(--cream);
+    line-height: 1.25;
+    margin: 8px 0;
+}
+
+.section-heading h2 span {
+    color: var(--gold);
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.section-heading .ornament-divider {
+    margin-bottom: 0;
+}
+
+/* Поиск */
+.search-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 28px 0 18px;
+}
+
+#searchInput {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 17px;
+    background: var(--panel);
+    color: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: var(--gold);
+}
+
+#searchInput::placeholder {
+    color: #a79783;
+}
+
+.result-count {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Категории */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.category-btn {
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 9px 17px;
+    background: transparent;
+    color: var(--cream);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--red);
+    border-color: var(--red);
+    color: white;
+}
+
+/* Карточки */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.dish-card {
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    transition: transform .2s, border-color .2s;
+}
+
+.dish-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+}
+
+.dish-art {
+    height: 170px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at center,
+            #54331f,
+            #21110d 70%);
+    border-bottom: 1px solid var(--line);
+}
+
+.dish-art::before,
+.dish-art::after {
+    content: "❖";
+    position: absolute;
+    color: var(--gold);
+    opacity: .45;
+    font-size: 28px;
+}
+
+.dish-art::before {
+    top: 12px;
+    left: 14px;
+}
+
+.dish-art::after {
+    bottom: 12px;
+    right: 14px;
+}
+
+.dish-emoji {
+    font-size: 76px;
+    filter: drop-shadow(0 8px 7px #0008);
+}
+
+.dish-info {
+    padding: 18px;
+}
+
+.dish-category {
+    color: var(--gold);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dish-info h3 {
+    color: var(--cream);
+    font-family: Georgia, serif;
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 7px 0;
+}
+
+.dish-info p {
+    color: var(--muted);
+    font-size: 14px;
+    min-height: 44px;
+    overflow-wrap: anywhere;
+}
+
+.dish-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.price {
+    color: var(--gold);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.order-btn {
+    border: 1px solid var(--line);
+    padding: 7px 12px;
+    color: var(--cream);
+    background: transparent;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.order-btn:hover {
+    background: var(--red);
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 45px 15px;
+    text-align: center;
+    border: 1px dashed var(--line);
+    color: var(--muted);
+}
+
+/* О ресторане */
+.about-section {
+    padding: 45px 0;
+    background: #21110e;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.about-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    max-width: 750px;
+}
+
+.about-symbol {
+    color: var(--gold);
+    font-size: 65px;
+}
+
+.about-inner h2 {
+    margin: 7px 0;
+    font-family: Georgia, serif;
+    font-size: 30px;
+}
+
+.about-inner p {
+    color: var(--muted);
+}
+
+/* Контакты */
+.contacts {
+    padding-top: 65px;
+    padding-bottom: 70px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.contact-card {
+    text-align: center;
+    padding: 25px 12px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+}
+
+.contact-card > span {
+    color: var(--gold);
+    font-size: 30px;
+}
+
+.contact-card h3 {
+    margin: 6px 0;
+}
+
+.contact-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Панель управления */
+.admin-section {
+    padding: 60px 0;
+    background: #100907;
+    border-top: 1px solid var(--line);
+}
+
+.admin-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding: 25px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+}
+
+.admin-form label {
+    display: grid;
+    gap: 7px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.admin-form input,
+.admin-form select {
+    width: 100%;
+    padding: 12px;
+    color: var(--cream);
+    background: #160d09;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    outline: none;
+}
+
+.admin-form input:focus,
+.admin-form select:focus {
+    border-color: var(--gold);
+}
+
+.admin-form select option {
+    background: var(--panel);
+}
+
+.admin-button {
+    align-self: end;
+    margin: 0;
+}
+
+.admin-list-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 15px;
+}
+
+.admin-list-heading h3 {
+    color: var(--gold);
+}
+
+.admin-list-heading span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.admin-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+}
+
+.admin-row-info {
+    overflow-wrap: anywhere;
+}
+
+.admin-row-info small {
+    display: block;
+    color: var(--muted);
+}
+
+.delete-btn {
+    flex-shrink: 0;
+    border: 1px solid #9f3933;
+    background: transparent;
+    color: #ffaaa2;
+    padding: 7px 11px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.delete-btn:hover {
+    background: var(--red);
+    color: white;
+}
+
+/* Подвал */
+footer {
+    padding: 30px 15px;
+    text-align: center;
+    border-top: 2px solid var(--gold);
+}
+
+.footer-pattern {
+    color: var(--gold);
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+footer p {
+    color: var(--muted);
+    margin: 5px 0;
+}
+
+footer small {
+    color: #a18a6e;
+}
+
+/* Телефоны и планшеты */
+@media (max-width: 850px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero::before {
+        left: 10px;
+    }
+
+    .hero::after {
+        right: 10px;
+    }
+
+    .hero::before,
+    .hero::after {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 580px) {
+    .nav {
+        padding: 15px 0;
+        flex-direction: column;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    .hero {
+        min-height: 440px;
+        padding: 65px 24px;
+    }
+
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-name {
+        font-size: 35px;
+        letter-spacing: 1px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .menu-section {
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
+
+    .menu-grid,
+    .contact-grid,
+    .admin-form {
+        grid-template-columns: 1fr;
+    }
+
+    .dish-art {
+        height: 190px;
+    }
+
+    .search-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .categories {
+        gap: 7px;
+    }
+
+    .category-btn {
+        padding: 8px 11px;
+        font-size: 13px;
+    }
+
+    .about-inner {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .about-symbol {
+        font-size: 38px;
+    }
+
+    .about-inner h2 {
+        font-size: 24px;
+    }
+
+    .admin-form {
+        padding: 16px;
+    }
+
+    .admin-list-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
